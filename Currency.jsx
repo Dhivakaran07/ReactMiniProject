@@ -25,13 +25,14 @@ class Currency extends Component {
         const value=Number(this.state.input)
         this.setState({Result:value*0.0098+"Eur"})
     }
-     history = () => {
+    history = () => {
   const value = this.state.input;
   if (value && value.length > 0) {
     this.setState((prevState) => ({
-      history: [...prevState.history, value+","]  
+      history: [...prevState.history, value+"=",prevState.Result+","]  
     }));
   }
+}
 }
     render() {
         return (
@@ -63,5 +64,6 @@ class Currency extends Component {
 }
 
 export default Currency
+
 
 
